@@ -1,0 +1,4 @@
+com\asd\sorting\MergeSortTest.class
+org\junit\Test.class
+com\asd\sorting\DeterministicSelectTest.class
+com\asd\sorting\QuickSortTest.class
