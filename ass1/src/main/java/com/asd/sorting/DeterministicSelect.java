@@ -1,0 +1,75 @@
+package com.asd.sorting;
+import java.util.ArrayList;
+import java.util.Collections;
+public class DeterministicSelect {
+
+    public static Integer deterministicSelect(ArrayList<Integer> arr, int k) {
+        
+        if (arr.size() == 1){
+            return arr.get(0);
+        }
+
+        ArrayList<Integer> list_of_medians = new ArrayList<>();
+        ArrayList<Integer> temp_array = new ArrayList<>();
+        for (int i = 0 ; i < arr.size(); i++){
+
+            temp_array.add(arr.get(i));
+            if( ( i + 1 ) % 5 == 0){
+
+                Collections.sort(temp_array);
+                list_of_medians.add(temp_array.get((int) Math.floor(temp_array.size()/2)));
+                temp_array = new ArrayList<>();
+            }
+
+        }
+        if (!temp_array.isEmpty()){
+
+            Collections.sort(temp_array);
+            list_of_medians.add(temp_array.get((int) Math.floor(temp_array.size()/2)));
+
+        }
+
+        int pivotIndex=(int) Math.ceil(list_of_medians.size()/2.0);
+        int pivot=deterministicSelect(list_of_medians, pivotIndex);
+        ArrayList<Integer> L = new ArrayList<>();
+        ArrayList<Integer> E = new ArrayList<>();
+        ArrayList<Integer> R = new ArrayList<>();
+
+        for(int i = 0 ; i < arr.size();i++){
+
+            if (arr.get(i) < pivot){
+
+                L.add(arr.get(i));
+
+            }
+            else if (arr.get(i) == pivot){
+
+                E.add(arr.get(i));
+
+            }
+            else{
+
+                R.add(arr.get(i));
+
+            }
+
+        }
+        if (L.size() >= k){
+
+            return deterministicSelect(L, k);
+
+        }
+        else if (k - L.size() <= E.size()){
+
+            return pivot;
+
+        }
+        else{
+
+            return deterministicSelect(R, k - L.size() - E.size());
+
+        }
+
+    }
+    
+}
