@@ -1,18 +1,33 @@
 package com.asd.sorting;
+
 import java.util.ArrayList;
 import java.util.Collections;
+
+import com.asd.Metrics.OperationCounter;
+import com.asd.Metrics.RecursionTracker;
 public class DeterministicSelect {
 
+    private static OperationCounter counter = null;
+    private static RecursionTracker tracker = null;
+
+
+    public DeterministicSelect(OperationCounter c, RecursionTracker t) {
+        DeterministicSelect.counter = c;
+        DeterministicSelect.tracker = t;
+    }
+
+
     public static Integer deterministicSelect(ArrayList<Integer> arr, int k) {
-        
+        tracker.enter();
         if (arr.size() == 1){
+            tracker.exit();
             return arr.get(0);
         }
 
         ArrayList<Integer> list_of_medians = new ArrayList<>();
         ArrayList<Integer> temp_array = new ArrayList<>();
         for (int i = 0 ; i < arr.size(); i++){
-
+            counter.increaseAssignments();
             temp_array.add(arr.get(i));
             if( ( i + 1 ) % 5 == 0){
 
@@ -36,7 +51,7 @@ public class DeterministicSelect {
         ArrayList<Integer> R = new ArrayList<>();
 
         for(int i = 0 ; i < arr.size();i++){
-
+            counter.increaseComparisons();
             if (arr.get(i) < pivot){
 
                 L.add(arr.get(i));
@@ -60,7 +75,7 @@ public class DeterministicSelect {
 
         }
         else if (k - L.size() <= E.size()){
-
+            tracker.exit();
             return pivot;
 
         }
