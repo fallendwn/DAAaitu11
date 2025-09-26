@@ -23,6 +23,12 @@ public class DeterministicSelect {
             tracker.exit();
             return arr.get(0);
         }
+        else if(arr.size() == 0 ){
+
+            tracker.exit();
+            return 0;
+
+        }
 
         ArrayList<Integer> list_of_medians = new ArrayList<>();
         ArrayList<Integer> temp_array = new ArrayList<>();

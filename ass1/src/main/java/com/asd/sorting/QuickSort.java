@@ -17,6 +17,18 @@ public class QuickSort {
     }
     public static void quickSort(int[] arr, int low, int high){
         tracker.enter();
+
+        if (arr == null || arr.length<=1){
+
+            return;
+
+        }
+
+        if (low<0||high>=arr.length||low>=high){
+
+            return;
+
+        }
         if (low<high){
             int pi = partition(arr, low, high);
 
