@@ -51,4 +51,4 @@ by Akra-Bazzi theorem :
 (1/5)p + (7/10)p = 1
 
 T(n) = Θ(n)
-
+a
