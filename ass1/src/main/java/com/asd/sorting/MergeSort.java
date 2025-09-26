@@ -82,6 +82,7 @@ public class MergeSort {
             int key = arr[i];
             int j = i-1;
             while(j >= l && arr[j] > key){
+                counter.increaseAssignments();
                 counter.increaseComparisons();
                 arr[j+1] = arr[j];
                 j--;
