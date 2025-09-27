@@ -6,8 +6,8 @@ import com.asd.Metrics.RecursionTracker;
 import java.util.*;
 
 public class ClosestPoint {
-    private static OperationCounter counter = null;
-    private static RecursionTracker tracker = null;
+    public static OperationCounter counter = null;
+    public static RecursionTracker tracker = null;
 
     public ClosestPoint(OperationCounter c,RecursionTracker t) {
         ClosestPoint.counter = c;
@@ -47,7 +47,7 @@ public class ClosestPoint {
         return minDist;
     }
 
-    static double minDistUtil(double[][] points, int left, int right) {
+    public static double minDistUtil(double[][] points, int left, int right) {
         if (tracker != null) tracker.enter();
 
         if (right - left <= 2) {

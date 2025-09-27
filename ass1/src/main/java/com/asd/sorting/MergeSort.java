@@ -5,8 +5,8 @@ import com.asd.Metrics.RecursionTracker;
 
 public class MergeSort {
     private static final int CUTOFF = 10;
-    private static OperationCounter counter = null;
-    private static RecursionTracker tracker = null;
+    public static OperationCounter counter = null;
+    public static RecursionTracker tracker = null;
 
     public MergeSort(OperationCounter counter, RecursionTracker tracker){
 

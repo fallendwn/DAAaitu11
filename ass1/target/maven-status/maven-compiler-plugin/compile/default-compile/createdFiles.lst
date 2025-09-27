@@ -1,4 +1,3 @@
-com\asd\App.class
 com\asd\sorting\DeterministicSelect.class
 com\asd\sorting\QuickSort.class
 com\asd\sorting\MergeSort.class

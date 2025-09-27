@@ -7,8 +7,8 @@ import com.asd.Metrics.RecursionTracker;
 
 public class QuickSort {
 
-    private static OperationCounter counter = null;
-    private static RecursionTracker tracker = null;
+    public static OperationCounter counter = null;
+    public static RecursionTracker tracker = null;
     public QuickSort(OperationCounter counter, RecursionTracker tracker){
 
         QuickSort.counter = counter;
@@ -19,13 +19,13 @@ public class QuickSort {
         tracker.enter();
 
         if (arr == null || arr.length<=1){
-
+            tracker.exit();
             return;
 
         }
 
         if (low<0||high>=arr.length||low>=high){
-
+            tracker.exit();
             return;
 
         }

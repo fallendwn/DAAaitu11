@@ -7,8 +7,8 @@ import com.asd.Metrics.OperationCounter;
 import com.asd.Metrics.RecursionTracker;
 public class DeterministicSelect {
 
-    private static OperationCounter counter = null;
-    private static RecursionTracker tracker = null;
+    public static OperationCounter counter = null;
+    public static RecursionTracker tracker = null;
 
 
     public DeterministicSelect(OperationCounter c, RecursionTracker t) {

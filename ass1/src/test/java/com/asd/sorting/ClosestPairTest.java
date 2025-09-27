@@ -16,35 +16,6 @@ public class ClosestPairTest {
 
     private static final Random random = new Random();
 
-    private static double distance(double[] p1, double[] p2){
-
-        return Math.sqrt((p1[0]) - p2[0] * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]));
-
-
-    }
-    private static double minDistance (List<double[]> points){
-
-        int n = points.size();
-        double minDist = Double.MAX_VALUE;
-
-        for (int i = 0; i <n ; ++i){
-
-            for (int j = i + 1; j<n; ++j){
-
-                double dist = distance(points.get(i), points.get(j));
-                if (dist < minDist){
-
-                    minDist = dist;
-
-                }
-
-            }
-
-        }
-        return minDist;
-    }
-
-
     private List<double[]> generateRandomPoints(int size, double bound){
 
         List<double[]> points = new ArrayList<>(size);
