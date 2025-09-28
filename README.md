@@ -51,4 +51,12 @@ by Akra-Bazzi theorem :
 (1/5)p + (7/10)p = 1
 
 T(n) = Θ(n)
-a
+
+Plots for every graph, compared to N:
+
+
+<img width="640" height="480" alt="recursion_depth_vs_n" src="https://github.com/user-attachments/assets/1eeb8479-db2d-4a12-a1ab-9f92449df68a" />
+<img width="640" height="480" alt="comparisons_vs_n" src="https://github.com/user-attachments/assets/395c1bd6-5f31-4ad6-b7d2-8d4a3dceee3f" />
+<img width="640" height="480" alt="assignments_vs_n" src="https://github.com/user-attachments/assets/5a0148d8-469c-4f88-b14c-fdda409e323b" />
+
+<img width="640" height="480" alt="time_vs_n" src="https://github.com/user-attachments/assets/5bacd990-7fce-429f-beb6-a08d2af2d0f2" />
